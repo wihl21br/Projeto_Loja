@@ -1,0 +1,67 @@
+body {
+  background-color: #1448B9;
+    font-family: Arial;
+    padding: 0;
+    height:  100vh;
+    margin: 0;
+}
+
+:root {
+    --cor-terciaria: rgb(255, 255, 255);
+}
+header {
+  background: #00235A;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+}
+header img {
+  height: 70px;
+  width: auto;
+}
+#PainelPrincipal {
+    margin-top: 0px;
+    display: flex;
+    padding-left: 100px;
+    gap: 100px;
+    padding: 50px;
+    input{
+        border-radius: 5px;
+        border-color: unset;
+        font-weight: bold;
+    }
+    button{
+        border-color: unset;
+        border-radius: 5px;
+        background-color: #00235A;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    h2{
+        color: #00235A;
+        text-align: center;
+        border-color: unset;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .organizar{
+        margin-top: 100px;
+        color: white;
+        display: flex ;
+        background-color: rgb(187, 224, 255);
+        flex-direction: column;
+        gap: 25px;
+        padding: 50px;        
+        border-radius: 10px;
+        width: 400px;
+        min-height: 300px;
+    }
+    
+}
+#fundo {
+  background-color: #ffffff;
+  min-height: 100vh;
+}

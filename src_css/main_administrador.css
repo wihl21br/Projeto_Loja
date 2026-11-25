@@ -1,0 +1,88 @@
+:root {
+    --cor-input: rgb(223, 223, 217);
+}
+body {
+  background-color: #1448B9;
+    font-family: Arial;
+    padding: 0;
+    height:  100vh;
+    margin: 0;
+}
+header {
+  background: #00235A;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 30px;
+}
+header img {
+  height: 70px;
+  width: auto;
+}
+
+#PainelPrincipal {
+
+    border-radius: 10px;
+    width: 50vh;
+    height: 100%;
+    padding: 25px;
+
+    input{
+        border-radius: 5px;
+        border-color: unset;
+    }
+    button{
+        border-radius: 5px;
+        border-color: unset;
+        margin-left: 100px;
+        
+    }
+        .organizar{
+        display: flex ;
+        flex-direction: column;
+        gap: 25px;
+        padding: 50px;
+        background-color: var(--cor-input);
+        border-radius: 10px;
+    }
+
+}
+.vitrineItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  flex:1;
+  padding: 20px;
+}
+.card-produto {
+  background: #eef5ff;
+  padding: 15px;
+  border-radius: 10px;
+}
+.card-produto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.card-produto strong {
+  color: #00235A;
+  font-size: 18px;
+}
+.btn-excluir {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#fundo{
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    
+    width: 100%;
+    margin: 0;
+}
