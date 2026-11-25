@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Configurar</title>
+    <link rel="stylesheet" href="/src_css/main_administrador.css" />
+  </head>
+  <body>
+    <header>
+      <img src="logo.png" alt="Logo da loja" />
+        <h1>Pleno Variedades Administrador</h1>
+    </header>
+    <div id="fundo">
+      <div id="PainelPrincipal">
+        <form id="frmProduto">
+            <div class="organizar">
+              <input type="text" name="nome" placeholder="Digite o nome do produto" required />
+              <input type="number" step="0.01" name="preco" placeholder="Digite o valor do produto" required />
+              <input type="number" name="estoque" placeholder="Quantidade em estoque" required />
+              <input type="text" name="descricao" placeholder="Digite a descrição do produto" />
+              <input type="date" name="data_validade" title="Data de validade" />
+              <input type="text" name="imagem" placeholder="Cole o link da imagem" />       
+            </div>
+            <button type="submit">Cadastrar</button> 
+        </form>
+    </div>
+    <div class="vitrineItems">
+        <!-- vitrine de produtos cadastrados -->
+    </div>
+</div>
+    <script src="main.js"></script>
+  </body>
+</html>
