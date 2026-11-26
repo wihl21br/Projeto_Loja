@@ -26,7 +26,9 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 .eslintcache
 .cache
 *.tsbuildinfo
-
+# banco de dados (tem dados dos usuários)
+database.sqlite
+*.sqlite
 # IntelliJ based IDEs
 .idea
 
