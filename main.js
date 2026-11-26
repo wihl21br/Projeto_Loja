@@ -225,6 +225,13 @@ function renderizarCarrinho() {
   });
 
   totalCarrinho.textContent = total.toFixed(2);
+  if (listaCarrinho) {
+  listaCarrinho.addEventListener("click", (ev) => {
+    if (ev.target.classList.contains("btn-remover")) {
+      removerDoCarrinho(Number(ev.target.getAttribute("data-id")));
+    }
+  });
+}
 }
 
 if (btnLimparCarrinho) {
