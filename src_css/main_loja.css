@@ -1,5 +1,5 @@
 body {
-  background-color: #1448B9;
+    background-color: #1448B9;
     font-family: Arial;
     padding: 0;
     height:  100vh;
@@ -11,21 +11,19 @@ header {
   color: white;
   display: flex;
   align-items: center;
-  gap: 300px;
+  gap: 200px;
   padding: 10px 30px;
-
+  
 }
 header img {
   height: 70px;
   width: auto;
 }
 #PainelPrincipal {
-  background: rgb(255, 255, 255);
-  padding: 10px;
-  justify-content: center;
-  gap: 10px;
-  padding: 25px;
+
+  padding: 40px ;
   #menu {
+    width: 100%;
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -66,11 +64,11 @@ header img {
 #fundo{
     background-color: #ffffff;
     min-height: 100vh;
+    margin-right: -10px;
     width: 100%;
 }
 #carrinho-container {
   background-color: #1448B9;
-  margin: 20px;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 10px
 }

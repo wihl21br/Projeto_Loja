@@ -27,7 +27,6 @@ header img {
     width: 50vh;
     height: 100%;
     padding: 25px;
-
     input{
         border-radius: 5px;
         border-color: unset;
@@ -35,14 +34,20 @@ header img {
     button{
         border-radius: 5px;
         border-color: unset;
+        background-color:#00235A ;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
         margin-left: 100px;
+        width: 100px;
+
         
     }
         .organizar{
         display: flex ;
         flex-direction: column;
-        gap: 25px;
-        padding: 50px;
+        gap: 15px;
+        padding: 20px;
+        padding-bottom: 32px;
         background-color: var(--cor-input);
         border-radius: 10px;
     }
