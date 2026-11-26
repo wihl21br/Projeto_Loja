@@ -14,8 +14,9 @@ header {
   color: white;
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 25px;
+  gap: 200px;
+  padding: 10px 30px;
+  
 }
 header img {
   height: 70px;
@@ -24,9 +25,10 @@ header img {
 #PainelPrincipal {
     margin-top: 0px;
     display: flex;
-    padding-left: 100px;
     gap: 100px;
+    justify-content: center;
     padding: 50px;
+    
     input{
         border-radius: 5px;
         border-color: unset;
@@ -48,7 +50,7 @@ header img {
         font-weight: bold;
     }
     .organizar{
-        margin-top: 100px;
+        margin-top: 40px;
         color: white;
         display: flex ;
         background-color: rgb(187, 224, 255);

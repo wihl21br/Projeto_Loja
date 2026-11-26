@@ -1,11 +1,15 @@
 const frmLogin = document.querySelector(".formLogin");
 const frmCadastro = document.querySelector(".formCadastro");
+
+
 const divProdutos = document.querySelector(".vitrineItems");
 const divInformacao = document.querySelector("#informacao");
 let produtosGlobais = [];
 
 const listaCarrinho = document.querySelector("#lista-carrinho");
 const totalCarrinho = document.querySelector("#total-carrinho");
+
+
 const btnLimparCarrinho = document.querySelector("#btn-limpar-carrinho");
 const btnFinalizar = document.querySelector("#btn-finalizar");
 
@@ -115,7 +119,7 @@ if (divProdutos) {
           </div>
         `;
 
-        //Botão para fechar/limpar os detalhes
+        //fecha os detalhes
         document.getElementById("fechar-info").addEventListener("click", () => {
           divInformacao.innerHTML = "";
         });
@@ -142,7 +146,7 @@ if (divProdutos) {
 }
 
 carregarProdutos();
-
+// cadastra um produto, fetch para o /produtos
 const frmProduto = document.querySelector("#frmProduto");
 if (frmProduto) {
   frmProduto.addEventListener("submit", async (ev) => {
