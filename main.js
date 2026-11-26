@@ -122,7 +122,7 @@ if (divProdutos) {
       }
     }
 
-    // Ação: Excluir produto
+    // excluir um produto
     if (ev.target.classList.contains("btn-excluir")) {
       const response = await fetch(`/produtos`, {
         method: "DELETE",
@@ -176,6 +176,8 @@ if (frmProduto) {
 
 function adicionarAoCarrinho(produto) {
   const itemExistente = carrinho.find((item) => item.id === produto.id);
+  const qtdAtual = itemExistente ? itemExistente.quantidade : 0;
+if (qtdAtual >= produto.estoque) return alert("Não há mais estoque deste produto");
   if (itemExistente) {
     itemExistente.quantidade += 1;
   } else {
@@ -217,7 +219,7 @@ function renderizarCarrinho() {
     listaCarrinho.innerHTML += `
       <div class="item-carrinho" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
         <span>${item.nome} (${item.quantidade}x) - R$ ${subtotal.toFixed(2)}</span>
-        <button onclick="removerDoCarrinho(${item.id})">Remover</button>
+        <button class="btn-remover" data-id="${item.id}">Remover</button>
       </div>
     `;
   });

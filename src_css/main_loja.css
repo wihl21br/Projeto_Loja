@@ -68,3 +68,9 @@ header img {
     min-height: 100vh;
     width: 100%;
 }
+#carrinho-container {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
