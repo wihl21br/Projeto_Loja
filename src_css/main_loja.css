@@ -4,7 +4,6 @@ body {
     padding: 0;
     height:  100vh;
     margin: 0;
-    width: 100%;
 }
 header {
     background: #00235A;
@@ -13,14 +12,9 @@ header {
   align-items: center;
   gap: 200px;
   padding: 10px 30px;
-  min-height: 130px;
-}
-header img {
-  height: 130px;
-  width: auto;
+  
 }
 #PainelPrincipal {
-
   padding: 40px ;
   #menu {
     width: 100%;
