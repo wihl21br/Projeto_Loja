@@ -17,7 +17,7 @@ header {
   padding: 10px 30px;
 }
 header img {
-  height: 70px;
+  height: 130px;
   width: auto;
 }
 
@@ -59,11 +59,14 @@ header img {
   gap: 18px;
   flex:1;
   padding: 20px;
+  height: 100%;
 }
 .card-produto {
-  background: #eef5ff;
-  padding: 15px;
+  background: #e4e4e4;
+  padding: 25px;
   border-radius: 10px;
+  width: 100%;
+  box-shadow: 3px 3px 9px #000000af;
 }
 .card-produto img {
   width: 100%;
