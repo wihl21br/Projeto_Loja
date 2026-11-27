@@ -13,10 +13,10 @@ header {
   align-items: center;
   gap: 200px;
   padding: 10px 30px;
-  
+  min-height: 130px;
 }
 header img {
-  height: 230px;
+  height: 130px;
   width: auto;
 }
 #PainelPrincipal {
