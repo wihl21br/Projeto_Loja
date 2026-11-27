@@ -10,9 +10,9 @@ header {
   color: white;
   display: flex;
   align-items: center;
-  gap: 200px;
+  gap: 30px;
   padding: 10px 30px;
-  
+
 }
 #PainelPrincipal {
   padding: 40px ;

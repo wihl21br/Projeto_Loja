@@ -100,11 +100,11 @@ const srv = Bun.serve({
         }
         const body = await req.body?.json();
         const query = db.query(`
-            INSERT INTO produtos(nome, descricao, preco, data_validade, data_cadastro, estoque, imagem)
-            VALUES(:nome, :descricao, :preco, :data_validade, :data_cadastro, :estoque, :imagem)
+            INSERT INTO produtos(nome, descricao, preco, data_validade, data_cadastro, estoque, imagem, categoria)
+            VALUES(:nome, :descricao, :preco, :data_validade, :data_cadastro, :estoque, :imagem, :categoria)
           `);
 
-        const dbResp = query.run({":nome": body.nome,":descricao": body.descricao || "",":preco": Number(body.preco),":data_validade": body.data_validade || null,":data_cadastro": new Date().toISOString(),":estoque": Number(body?.estoque || 0),":imagem": body.imagem || null,
+        const dbResp = query.run({":nome": body.nome,":descricao": body.descricao || "",":preco": Number(body.preco),":data_validade": body.data_validade || null,":data_cadastro": new Date().toISOString(),":estoque": Number(body?.estoque || 0),":imagem": body.imagem || null,":categoria": body.categoria || null,
         });
 
         return Response.json(

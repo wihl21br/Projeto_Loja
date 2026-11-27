@@ -1,15 +1,12 @@
 const frmLogin = document.querySelector(".formLogin");
 const frmCadastro = document.querySelector(".formCadastro");
-
-
 const divProdutos = document.querySelector(".vitrineItems");
 const divInformacao = document.querySelector("#informacao");
 let produtosGlobais = [];
+const checkboxesCategoria = document.querySelectorAll(".filtro-categoria");
 
 const listaCarrinho = document.querySelector("#lista-carrinho");
 const totalCarrinho = document.querySelector("#total-carrinho");
-
-
 const btnLimparCarrinho = document.querySelector("#btn-limpar-carrinho");
 const btnFinalizar = document.querySelector("#btn-finalizar");
 
@@ -70,14 +67,30 @@ async function carregarProdutos() {
   const response = await fetch("/produtos");
   if (!response.ok) return;
   produtosGlobais = await response.json();
-  mostrarVitrine(produtosGlobais);
+  filtrarProdutos();
 }
+
+// Filtro por categoria (checkboxes da loja)
+// nenhuma marcada = mostra todos; marcadas = mostra só essas categorias
+function filtrarProdutos() {
+  const marcadas = [...checkboxesCategoria]
+    .filter((c) => c.checked)
+    .map((c) => c.value);
+
+  if (marcadas.length === 0) {
+    mostrarVitrine(produtosGlobais);
+    return;
+  }
+  mostrarVitrine(produtosGlobais.filter((p) => marcadas.includes(p.categoria)));
+}
+
+checkboxesCategoria.forEach((c) => c.addEventListener("change", filtrarProdutos));
 
 // Mostrando vitrine
 function mostrarVitrine(produtos) {
   divProdutos.innerHTML = "";
   if (produtos.length === 0) {
-    divProdutos.innerHTML = "<p>Nenhum produto cadastrado no momento.</p>";
+    divProdutos.innerHTML = "<p>Nenhum produto encontrado.</p>";
     return;
   }
   
@@ -87,6 +100,7 @@ function mostrarVitrine(produtos) {
       <div class="card-produto">
         ${produto.imagem ? `<img src="${produto.imagem}" alt="${produto.nome}" />` : ""}
         <h3>${produto.nome}</h3>
+        <p class="categoria">${produto.categoria || "Sem categoria"}</p>
         <p><strong>R$ ${Number(produto.preco).toFixed(2)}</strong></p>
         <button class="btn-info" data-id="${produto.id}">Mais Informações</button>
         ${!ehAdmin ? `<button class="btn-comprar" data-id="${produto.id}">Adicionar ao Carrinho</button>` : ""}
@@ -112,6 +126,7 @@ if (divProdutos) {
           <div class="detalhes-card">
             <h3>Detalhes: ${produto.nome}</h3>
             <p><strong>Preço:</strong> R$ ${Number(produto.preco).toFixed(2)}</p>
+            <p><strong>Categoria:</strong> ${produto.categoria || "Sem categoria"}</p>
             <p><strong>Estoque:</strong> ${produto.estoque}</p>
             <p><strong>Descrição:</strong> ${produto.descricao || "Sem descrição."}</p>
             <p><strong>Validade:</strong> ${produto.data_validade || "Não informada"}</p>
@@ -126,7 +141,7 @@ if (divProdutos) {
       }
     }
 
-    // excluir um produto
+    // excluir
     if (ev.target.classList.contains("btn-excluir")) {
       const response = await fetch(`/produtos`, {
         method: "DELETE",
@@ -146,7 +161,7 @@ if (divProdutos) {
 }
 
 carregarProdutos();
-// cadastra um produto, fetch para o /produtos
+//cadastra um produto no /produtos
 const frmProduto = document.querySelector("#frmProduto");
 if (frmProduto) {
   frmProduto.addEventListener("submit", async (ev) => {
@@ -162,6 +177,7 @@ if (frmProduto) {
         descricao: frmProduto.descricao.value,
         data_validade: frmProduto.data_validade.value,
         imagem: frmProduto.imagem.value,
+        categoria: frmProduto.categoria.value,
       }),
     });
 
@@ -181,7 +197,7 @@ if (frmProduto) {
 function adicionarAoCarrinho(produto) {
   const itemExistente = carrinho.find((item) => item.id === produto.id);
   const qtdAtual = itemExistente ? itemExistente.quantidade : 0;
-if (qtdAtual >= produto.estoque) return alert("Não há mais estoque deste produto");
+  if (qtdAtual >= produto.estoque) return alert("Não há mais estoque deste produto");
   if (itemExistente) {
     itemExistente.quantidade += 1;
   } else {
@@ -229,13 +245,14 @@ function renderizarCarrinho() {
   });
 
   totalCarrinho.textContent = total.toFixed(2);
-  if (listaCarrinho) {
+}
+
+if (listaCarrinho) {
   listaCarrinho.addEventListener("click", (ev) => {
     if (ev.target.classList.contains("btn-remover")) {
       removerDoCarrinho(Number(ev.target.getAttribute("data-id")));
     }
   });
-}
 }
 
 if (btnLimparCarrinho) {

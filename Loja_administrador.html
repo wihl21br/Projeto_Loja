@@ -22,12 +22,22 @@
               <input type="number" name="estoque" placeholder="Quantidade em estoque" required />
               <input type="text" name="descricao" placeholder="Digite a descrição do produto" />
               <input type="date" name="data_validade" title="Data de validade" />
-              <input type="text" name="imagem" placeholder="Cole o link da imagem" />       
+              <select id="categoria" name="categoria" required>
+                <option value="" disabled selected>Selecione uma categoria...</option>
+                <option value="Escola">Escola</option>
+                <option value="Comida">Comida</option>
+                <option value="Roupa">Roupas</option>
+                <option value="Limpeza">Limpeza</option>
+                <option value="Alimentos">Alimentos</option>
+                <option value="Utilidades">Utilidades</option>
+                <option value="Infantil">Infantil</option>
+              </select>
+              <input type="text" name="imagem" placeholder="Cole o link da imagem" />
             </div>
-            <button type="submit">Cadastrar</button> 
+            <button type="submit">Cadastrar</button>
         </form>
     </div>
-    
+
     <div class="vitrineItems">
         <!-- vitrine de produtos cadastrados -->
     </div>

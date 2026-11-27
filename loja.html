@@ -10,24 +10,36 @@
     <header>
       <img src="logo.png" alt="Logo da loja" style="height: 130px;
   width: auto;"/>
-    <div>
       <h1>Bem-vindo ao Pleno Variedades</h1>
-    <p>Encontre aqui produtos para o seu dia a dia.</p>
-</div>  
-      <div id="carrinho-container">
-        <h2>Seu Carrinho</h2>
-        <div id="lista-carrinho">
-          <p>O carrinho está vazio.</p>
-        </div>
-        <p><strong>Total: R$ <span id="total-carrinho">0.00</span></strong></p>
-        <button id="btn-finalizar">Finalizar Compra</button>
-        <button id="btn-limpar-carrinho">Limpar Carrinho</button>
-      </div>
+      <p>Encontre aqui produtos para o seu dia a dia.</p>
+<div id="carrinho-container">
+  <h2>Seu Carrinho</h2>
+  <div id="lista-carrinho">
+    <p>O carrinho está vazio.</p>
+  </div>
+  <p><strong>Total: R$ <span id="total-carrinho">0.00</span></strong></p>
+  <button id="btn-finalizar">Finalizar Compra</button>
+  <button id="btn-limpar-carrinho">Limpar Carrinho</button>
+</div>
+
     </header>
     <main>
       <div id="fundo">
       <div id="PainelPrincipal">
         <h2 id="titulo-produtos">Nossos produtos</h2>
+
+        <!-- filtro por categoria -->
+        <div id="filtros">
+          <strong>Categorias:</strong>
+          <label><input type="checkbox" class="filtro-categoria" value="Escola" /> Escola</label>
+          <label><input type="checkbox" class="filtro-categoria" value="Comida" /> Comida</label>
+          <label><input type="checkbox" class="filtro-categoria" value="Roupa" /> Roupas</label>
+          <label><input type="checkbox" class="filtro-categoria" value="Limpeza" /> Limpeza</label>
+          <label><input type="checkbox" class="filtro-categoria" value="Alimentos" /> Alimentos</label>
+          <label><input type="checkbox" class="filtro-categoria" value="Utilidades" /> Utilidades</label>
+          <label><input type="checkbox" class="filtro-categoria" value="Infantil" /> Infantil</label>
+        </div>
+
           <div class="vitrineItems">
         </div>
       

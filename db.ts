@@ -19,7 +19,8 @@ db.exec(`
         data_validade   TEXT,
         data_cadastro   TEXT,
         estoque         INTEGER NOT NULL,
-        imagem          TEXT
+        imagem          TEXT,
+        categoria       TEXT
     );
 
     CREATE TABLE IF NOT EXISTS configuracoes (
