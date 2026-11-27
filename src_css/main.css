@@ -29,8 +29,7 @@ header img {
     justify-content: center;
     padding: 50px;
     
-    input{
-        border-radius: 5px;
+    input{        
         border-color: unset;
         font-weight: bold;
     }
